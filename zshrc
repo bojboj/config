@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
 export EDITOR='nvim'
-export LESS='-SR'
+export LESS='-SFR'
 
 ZSH_THEME="mgutz"
 
