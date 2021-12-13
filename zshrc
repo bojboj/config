@@ -10,6 +10,5 @@ zstyle :omz:plugins:keychain agents ssh
 zstyle :omz:plugins:keychain options --quiet
 
 export EDITOR="nvim"
-export LESS="-SFR"
 
 source $ZSH/oh-my-zsh.sh
