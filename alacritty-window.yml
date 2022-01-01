@@ -1,0 +1,10 @@
+key_bindings:
+  - { key: N, mods: Alt, action: SpawnNewInstance }
+
+window:
+  decorations: none
+
+font:
+  size: 16.0
+  normal:
+    family: FuraMono NF
