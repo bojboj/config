@@ -5,3 +5,8 @@ font:
   size: 12.0
   normal:
     family: FuraMono NF
+    style: Regular
+
+  bold:
+    family: FuraMono NF
+    style: Bold
