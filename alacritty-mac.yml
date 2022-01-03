@@ -7,9 +7,13 @@ key_bindings:
 font:
   size: 16.0
   normal:
-    family: FiraMono Nerd Font
+    family: Hack Nerd Font Mono
     style: Regular
 
+  Italic:
+    family: Hack Nerd Font Mono
+    style: Italic
+
   bold:
-    family: FiraMono Nerd Font
+    family: Hack Nerd Font Mono
     style: Bold

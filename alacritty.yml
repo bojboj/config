@@ -1,23 +1,32 @@
-# Seoul256
+# github Alacritty Colors
 colors:
+  # Default colors
   primary:
-    background: '#4a4a4a'
-    foreground: '#d0d0d0'
+    background: '0x24292e'
+    foreground: '0xd1d5da'
+
+  # Normal colors
   normal:
-    black:   '#4e4e4e'
-    red:     '#d68787'
-    green:   '#5f865f'
-    yellow:  '#d8af5f'
-    blue:    '#85add4'
-    magenta: '#d7afaf'
-    cyan:    '#87afaf'
-    white:   '#d0d0d0'
+    black:   '0x24292e'
+    red:     '0xf14c4c'
+    green:   '0x23d18b'
+    yellow:  '0xe2e210'
+    blue:    '0x3b8eea'
+    magenta: '0xbc3fbc'
+    cyan:    '0x29b7da'
+    white:   '0xd1d5da'
+
+  # Bright colors
   bright:
-    black:   '#626262'
-    red:     '#d75f87'
-    green:   '#87af87'
-    yellow:  '#ffd787'
-    blue:    '#add4fb'
-    magenta: '#ffafaf'
-    cyan:    '#87d7d7'
-    white:   '#e4e4e4'
+    black:   '0x666666'
+    red:     '0xf14c4c'
+    green:   '0x23d18b'
+    yellow:  '0xf5f543'
+    blue:    '0x3b8eea'
+    magenta: '0xd670d6'
+    cyan:    '0x29b7da'
+    white:   '0xd1d5da'
+
+  indexed_colors:
+    - { index: 16, color: '0xd18616' }
+    - { index: 17, color: '0xf14c4c' }
