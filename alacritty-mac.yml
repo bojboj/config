@@ -10,7 +10,7 @@ font:
     family: Hack Nerd Font Mono
     style: Regular
 
-  Italic:
+  italic:
     family: Hack Nerd Font Mono
     style: Italic
 
