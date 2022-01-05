@@ -1,32 +1,31 @@
-# github Alacritty Colors
+# Nightfox Alacritty Colors
+# Style: nightfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox/nightfox_alacritty.yml
 colors:
   # Default colors
   primary:
-    background: '0x24292e'
-    foreground: '0xd1d5da'
-
+    background: '0x192330'
+    foreground: '0xcdcecf'
   # Normal colors
   normal:
-    black:   '0x24292e'
-    red:     '0xf14c4c'
-    green:   '0x23d18b'
-    yellow:  '0xe2e210'
-    blue:    '0x3b8eea'
-    magenta: '0xbc3fbc'
-    cyan:    '0x29b7da'
-    white:   '0xd1d5da'
-
+    black:   '0x393b44'
+    red:     '0xc94f6d'
+    green:   '0x81b29a'
+    yellow:  '0xdbc074'
+    blue:    '0x719cd6'
+    magenta: '0x9d79d6'
+    cyan:    '0x63cdcf'
+    white:   '0xdfdfe0'
   # Bright colors
   bright:
-    black:   '0x666666'
-    red:     '0xf14c4c'
-    green:   '0x23d18b'
-    yellow:  '0xf5f543'
-    blue:    '0x3b8eea'
-    magenta: '0xd670d6'
-    cyan:    '0x29b7da'
-    white:   '0xd1d5da'
-
+    black:   '0x475072'
+    red:     '0xd6616b'
+    green:   '0x58cd8b'
+    yellow:  '0xffe37e'
+    blue:    '0x84cee4'
+    magenta: '0xb8a1e3'
+    cyan:    '0x59f0ff'
+    white:   '0xf2f2f2'
   indexed_colors:
-    - { index: 16, color: '0xd18616' }
-    - { index: 17, color: '0xf14c4c' }
+    - { index: 16, color: '0xf4a261' }
+    - { index: 17, color: '0xd67ad2' }
