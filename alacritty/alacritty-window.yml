@@ -1,6 +1,5 @@
 key_bindings:
-  - { key: N,    mods: Alt,     action: SpawnNewInstance }
-  - { key: Key6, mods: Control, chars: "\x1e" }
+  - { key: N, mods: Alt, action: SpawnNewInstance }
 
 font:
   size: 12.0
