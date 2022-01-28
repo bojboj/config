@@ -1,5 +1,5 @@
 key_bindings:
-  - { key: N, mods: Alt, action: SpawnNewInstance }
+  - { key: N, mods: Alt, action: CreateNewWindow }
 
 font:
   size: 12.0
