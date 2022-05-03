@@ -1,2 +1,0 @@
-key_bindings:
-  - { key: Key6, mods: Control, chars: "\x1e" }

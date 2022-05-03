@@ -1,3 +1,22 @@
+key_bindings:
+  - { key: N, mods: Command, action: CreateNewWindow }
+
+
+font:
+  size: 16.0
+  normal:
+    family: Hack Nerd Font Mono
+    style: Regular
+
+  italic:
+    family: Hack Nerd Font Mono
+    style: Italic
+
+  bold:
+    family: Hack Nerd Font Mono
+    style: Bold
+
+
 # Nightfox Alacritty Colors
 # Style: nightfox
 # Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox/nightfox_alacritty.yml
@@ -29,3 +48,4 @@ colors:
   indexed_colors:
     - { index: 16, color: '0xf4a261' }
     - { index: 17, color: '0xd67ad2' }
+
