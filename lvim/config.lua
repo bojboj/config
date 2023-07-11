@@ -3,6 +3,14 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
+lvim.keys.normal_mode["*"] = "*``"
+lvim.keys.normal_mode["#"] = "#``"
+
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, {"intelephense"})
+lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+  return server ~= "phpactor"
+end, lvim.lsp.automatic_configuration.skipped_servers)
+
 lvim.plugins = {
   {
     "Pocco81/auto-save.nvim",
