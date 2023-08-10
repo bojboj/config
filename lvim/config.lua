@@ -16,7 +16,33 @@ lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(serve
   return server ~= "phpactor"
 end, lvim.lsp.automatic_configuration.skipped_servers)
 
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  { command = "phpcsfixer", filetypes = { "php" } },
+  { command = "yamlfmt", filetypes = { "yaml" } },
+}
+
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup { { command = "jsonlint", filetypes = { "json" } } }
+
 lvim.plugins = {
+  {
+    "zbirenbaum/copilot-cmp",
+    event = "InsertEnter",
+    dependencies = { "zbirenbaum/copilot.lua" },
+    config = function()
+      vim.defer_fn(function()
+        require("copilot").setup({
+          filetypes = {
+            php = true,
+            javascript = true,
+            ["*"] = false,
+          }
+        })
+        require("copilot_cmp").setup()
+      end, 100)
+    end,
+  },
   {
     "Pocco81/auto-save.nvim",
     config = function()
