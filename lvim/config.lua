@@ -10,6 +10,7 @@ lvim.keys.normal_mode["*"] = "*``"
 lvim.keys.normal_mode["#"] = "#``"
 
 lvim.builtin.which_key.mappings["lo"] = { "<cmd>SymbolsOutline<cr>", "Outline" }
+lvim.builtin.nvimtree.setup.filters.custom = { '.DS_Store' }
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "intelephense" })
 lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
