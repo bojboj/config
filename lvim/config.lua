@@ -20,11 +20,18 @@ end, lvim.lsp.automatic_configuration.skipped_servers)
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "phpcsfixer", filetypes = { "php" } },
-  { command = "yamlfmt", filetypes = { "yaml" } },
+  { command = "yamlfmt",    filetypes = { "yaml" } },
 }
 
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup { { command = "jsonlint", filetypes = { "json" } } }
+
+local dap = require("dap")
+dap.adapters.php = {
+  type = "executable",
+  command = "php-debug-adapter",
+  args = {}
+}
 
 lvim.plugins = {
   {
@@ -113,5 +120,23 @@ lvim.plugins = {
         },
       })
     end,
+  },
+  {
+    "karb94/neoscroll.nvim",
+    event = "WinScrolled",
+    config = function()
+      require('neoscroll').setup({
+        mappings = { '<C-u>', '<C-d>', '<C-b>', '<C-f>',
+          '<C-y>', '<C-e>', 'zt', 'zz', 'zb' },
+        hide_cursor = true,
+        stop_eof = true,
+        use_local_scrolloff = false,
+        respect_scrolloff = false,
+        cursor_scrolls_alone = true,
+        easing_function = nil,
+        pre_hook = nil,
+        post_hook = nil,
+      })
+    end
   },
 }
