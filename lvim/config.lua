@@ -9,7 +9,15 @@ lvim.transparent_window = true
 lvim.keys.normal_mode["*"] = "*``"
 lvim.keys.normal_mode["#"] = "#``"
 
-lvim.builtin.which_key.mappings["lo"] = { "<cmd>SymbolsOutline<cr>", "Outline" }
+lvim.builtin.which_key.mappings["t"] = {
+  name = "Diagnostics",
+  t = { "<cmd>TroubleToggle<cr>", "trouble" },
+  w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "workspace" },
+  d = { "<cmd>TroubleToggle document_diagnostics<cr>", "document" },
+  q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
+  l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
+  r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
+}
 lvim.builtin.nvimtree.setup.filters.custom = { '.DS_Store' }
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "intelephense", "cucumber_language_server" })
@@ -26,6 +34,7 @@ formatters.setup {
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup { { command = "jsonlint", filetypes = { "json" } } }
 
+require("dap.ext.vscode").load_launchjs()
 local dap = require("dap")
 dap.adapters.php = {
   type = "executable",
@@ -40,13 +49,7 @@ lvim.plugins = {
     dependencies = { "zbirenbaum/copilot.lua" },
     config = function()
       vim.defer_fn(function()
-        require("copilot").setup({
-          filetypes = {
-            php = true,
-            javascript = true,
-            ["*"] = false,
-          }
-        })
+        require("copilot").setup()
         require("copilot_cmp").setup()
       end, 100)
     end,
@@ -84,44 +87,6 @@ lvim.plugins = {
     end,
   },
   {
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-    config = function()
-      require("symbols-outline").setup({
-        symbols = {
-          File = { icon = lvim.icons.kind.File, hl = "@text.uri" },
-          Module = { icon = lvim.icons.kind.Module, hl = "@namespace" },
-          Namespace = { icon = lvim.icons.kind.Namespace, hl = "@namespace" },
-          Package = { icon = lvim.icons.kind.Package, hl = "@namespace" },
-          Class = { icon = lvim.icons.kind.Class, hl = "@constant" },
-          Method = { icon = lvim.icons.kind.Method, hl = "@method" },
-          Property = { icon = lvim.icons.kind.Property, hl = "@method" },
-          Field = { icon = lvim.icons.kind.Field, hl = "@field" },
-          Constructor = { icon = lvim.icons.kind.Constructor, hl = "@constructor" },
-          Enum = { icon = lvim.icons.kind.Enum, hl = "@type" },
-          Interface = { icon = lvim.icons.kind.Interface, hl = "@type" },
-          Function = { icon = lvim.icons.kind.Function, hl = "@function" },
-          Variable = { icon = lvim.icons.kind.Variable, hl = "Statement" },
-          Constant = { icon = lvim.icons.kind.Constant, hl = "Statement" },
-          String = { icon = lvim.icons.kind.String, hl = "@string" },
-          Number = { icon = lvim.icons.kind.Number, hl = "@number" },
-          Boolean = { icon = lvim.icons.kind.Boolean, hl = "@boolean" },
-          Array = { icon = lvim.icons.kind.Array, hl = "@constant" },
-          Object = { icon = lvim.icons.kind.Object, hl = "@constant" },
-          Key = { icon = lvim.icons.kind.Key, hl = "@type" },
-          Null = { icon = lvim.icons.kind.Null, hl = "@type" },
-          EnumMember = { icon = lvim.icons.kind.EnumMember, hl = "@field" },
-          Struct = { icon = lvim.icons.kind.Struct, hl = "@type" },
-          Event = { icon = lvim.icons.kind.Event, hl = "@type" },
-          Operator = { icon = lvim.icons.kind.Operator, hl = "@operator" },
-          TypeParameter = { icon = lvim.icons.kind.TypeParameter, hl = "@parameter" },
-          Component = { icon = lvim.icons.kind.Function, hl = "@function" },
-          Fragment = { icon = lvim.icons.kind.Constant, hl = "@constant" },
-        },
-      })
-    end,
-  },
-  {
     "karb94/neoscroll.nvim",
     event = "WinScrolled",
     config = function()
@@ -138,5 +103,9 @@ lvim.plugins = {
         post_hook = nil,
       })
     end
+  },
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
   },
 }
