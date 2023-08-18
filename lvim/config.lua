@@ -4,6 +4,7 @@
 -- Discord: https://discord.com/invite/Xb9B4Ny
 --
 
+vim.opt.wrap = true -- wrap lines
 lvim.transparent_window = true
 
 lvim.keys.normal_mode["*"] = "*``"
