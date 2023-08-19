@@ -32,9 +32,6 @@ formatters.setup {
   { command = "yamlfmt",    filetypes = { "yaml" } },
 }
 
-local linters = require "lvim.lsp.null-ls.linters"
-linters.setup { { command = "jsonlint", filetypes = { "json" } } }
-
 require("dap.ext.vscode").load_launchjs()
 local dap = require("dap")
 dap.adapters.php = {
