@@ -19,6 +19,23 @@ lvim.builtin.which_key.mappings["t"] = {
   l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
   r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
 }
+lvim.builtin.which_key.mappings["n"] = {
+  name = "Notes",
+  o = { "<cmd>ObsidianOpen<cr>", "Open Obsidian app" },
+  n = { "<cmd>ObsidianNew<cr>", "New note" },
+  p = { "<cmd>ObsidianQuickSwitch<cr>", "Switch note" },
+  f = { "<cmd>ObsidianFollowLink<cr>", "Follow link" },
+  r = { "<cmd>ObsidianBacklinks<cr>", "List of references" },
+  t = { "<cmd>ObsidianToday<cr>", "New daily note" },
+  y = { "<cmd>ObsidianYesterday<cr>", "Open daily note from previous day" },
+  i = { "<cmd>ObsidianTemplate<cr>", "Insert a template" },
+  s = { "<cmd>ObsidianSearch<cr>", "Search for notes" },
+}
+lvim.builtin.which_key.vmappings["n"] = {
+  name = "Notes",
+  l = { "<cmd>ObsidianLink<cr>", "Link note" },
+  L = { "<cmd>ObsidianLinkNew<cr>", "Create a new note and link it" },
+}
 lvim.builtin.nvimtree.setup.filters.custom = { '.DS_Store' }
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "intelephense", "cucumber_language_server" })
@@ -106,4 +123,18 @@ lvim.plugins = {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
+  {
+    "epwalsh/obsidian.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = {
+      dir = "/Users/Shared/obsidian",
+      completion = {
+        nvim_cmp = true,
+        min_chars = 2,
+      },
+      mappings = {},
+    },
+  }
 }
