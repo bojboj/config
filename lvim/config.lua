@@ -3,8 +3,7 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 --
-
-vim.opt.wrap = true -- wrap lines
+vim.opt.wrap = true
 lvim.transparent_window = true
 
 lvim.keys.normal_mode["*"] = "*``"
@@ -21,8 +20,8 @@ lvim.builtin.which_key.mappings["t"] = {
 }
 lvim.builtin.which_key.mappings["n"] = {
   name = "Notes",
-  o = { "<cmd>ObsidianOpen<cr>", "Open Obsidian app" },
-  n = { "<cmd>ObsidianNew<cr>", "New note" },
+  o = { "<cmd>lua Open_note()<cr>", "Open Obsidian app" },
+  n = { "<cmd>lua New_note()<cr>", "New note" },
   p = { "<cmd>ObsidianQuickSwitch<cr>", "Switch note" },
   f = { "<cmd>ObsidianFollowLink<cr>", "Follow link" },
   r = { "<cmd>ObsidianBacklinks<cr>", "List of references" },
@@ -135,6 +134,27 @@ lvim.plugins = {
         min_chars = 2,
       },
       mappings = {},
+      note_id_func = function(title)
+        local suffix = ""
+        if title ~= nil then
+          suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+        else
+          for _ = 1, 4 do
+            suffix = suffix .. string.char(math.random(65, 90))
+          end
+        end
+        return tostring(os.time()) .. "-" .. suffix
+      end,
     },
   }
 }
+
+function Open_note()
+  local input = vim.fn.input('name: ')
+  vim.cmd('ObsidianOpen ' .. input)
+end
+
+function New_note()
+  local input = vim.fn.input('name: ')
+  vim.cmd('ObsidianNew ' .. input)
+end
