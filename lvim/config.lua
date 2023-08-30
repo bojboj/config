@@ -70,9 +70,9 @@ lvim.plugins = {
   },
   {
     "Pocco81/auto-save.nvim",
-    config = function()
-      require("auto-save").setup()
-    end,
+    require("auto-save").setup({
+      enabled = false,
+    })
   },
   {
     "kevinhwang91/nvim-bqf",
@@ -134,16 +134,25 @@ lvim.plugins = {
         min_chars = 2,
       },
       mappings = {},
-      note_id_func = function(title)
-        local suffix = ""
-        if title ~= nil then
-          suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
-        else
-          for _ = 1, 4 do
-            suffix = suffix .. string.char(math.random(65, 90))
+      note_frontmatter_func = function(note)
+        local out = { id = note.id, tags = note.tags }
+        if note.metadata ~= nil and require("obsidian").util.table_length(note.metadata) > 0 then
+          for k, v in pairs(note.metadata) do
+            out[k] = v
           end
         end
-        return tostring(os.time()) .. "-" .. suffix
+        return out
+      end,
+      note_id_func = function(title)
+        local prefix = ""
+        if title ~= nil then
+          prefix = title:gsub(" ", "_"):lower()
+        else
+          for _ = 1, 4 do
+            prefix = prefix .. string.char(math.random(65, 90))
+          end
+        end
+        return prefix .. "-" .. tostring(os.time())
       end,
     },
   }
