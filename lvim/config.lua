@@ -20,7 +20,7 @@ lvim.builtin.which_key.mappings["t"] = {
 }
 lvim.builtin.which_key.mappings["n"] = {
   name = "Notes",
-  o = { "<cmd>lua Open_note()<cr>", "Open Obsidian app" },
+  o = { "<cmd>ObsidianOpen<cr>", "Open Obsidian app" },
   n = { "<cmd>lua New_note()<cr>", "New note" },
   p = { "<cmd>ObsidianQuickSwitch<cr>", "Switch note" },
   f = { "<cmd>ObsidianFollowLink<cr>", "Follow link" },
@@ -157,11 +157,6 @@ lvim.plugins = {
     },
   }
 }
-
-function Open_note()
-  local input = vim.fn.input('name: ')
-  vim.cmd('ObsidianOpen ' .. input)
-end
 
 function New_note()
   local input = vim.fn.input('name: ')
