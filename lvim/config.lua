@@ -128,7 +128,7 @@ lvim.plugins = {
       "nvim-lua/plenary.nvim",
     },
     opts = {
-      dir = "/Users/Shared/obsidian",
+      dir = "~/Documents/Notes",
       completion = {
         nvim_cmp = true,
         min_chars = 2,
@@ -144,15 +144,14 @@ lvim.plugins = {
         return out
       end,
       note_id_func = function(title)
-        local prefix = ""
         if title ~= nil then
-          prefix = title:gsub(" ", "_"):lower()
+          title = title:gsub(" ", "_"):lower()
         else
           for _ = 1, 4 do
-            prefix = prefix .. string.char(math.random(65, 90))
+            title = string.char(math.random(65, 90))
           end
         end
-        return prefix .. "-" .. tostring(os.time())
+        return title
       end,
     },
   }
