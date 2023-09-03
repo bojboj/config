@@ -134,6 +134,7 @@ lvim.plugins = {
         min_chars = 2,
       },
       mappings = {},
+      open_app_foreground = true,
       note_frontmatter_func = function(note)
         local out = { tags = note.tags }
         if note.metadata ~= nil and require("obsidian").util.table_length(note.metadata) > 0 then
