@@ -135,7 +135,7 @@ lvim.plugins = {
       },
       mappings = {},
       note_frontmatter_func = function(note)
-        local out = { id = note.id, tags = note.tags }
+        local out = { tags = note.tags }
         if note.metadata ~= nil and require("obsidian").util.table_length(note.metadata) > 0 then
           for k, v in pairs(note.metadata) do
             out[k] = v
