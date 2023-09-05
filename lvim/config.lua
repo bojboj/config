@@ -145,13 +145,6 @@ lvim.plugins = {
         return out
       end,
       note_id_func = function(title)
-        if title ~= nil then
-          title = title:gsub(" ", "_"):lower()
-        else
-          for _ = 1, 4 do
-            title = string.char(math.random(65, 90))
-          end
-        end
         return title
       end,
     },
