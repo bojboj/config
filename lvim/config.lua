@@ -5,6 +5,7 @@
 --
 vim.opt.wrap = true
 lvim.transparent_window = true
+lvim.colorscheme = "tokyonight"
 
 lvim.keys.normal_mode["*"] = "*``"
 lvim.keys.normal_mode["#"] = "#``"
