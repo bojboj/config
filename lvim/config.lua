@@ -41,17 +41,17 @@ dap.adapters.php = {
 }
 
 lvim.plugins = {
-  {
-    "zbirenbaum/copilot-cmp",
-    event = "InsertEnter",
-    dependencies = { "zbirenbaum/copilot.lua" },
-    config = function()
-      vim.defer_fn(function()
-        require("copilot").setup()
-        require("copilot_cmp").setup()
-      end, 100)
-    end,
-  },
+  -- {
+  --   "zbirenbaum/copilot-cmp",
+  --   event = "InsertEnter",
+  --   dependencies = { "zbirenbaum/copilot.lua" },
+  --   config = function()
+  --     vim.defer_fn(function()
+  --       require("copilot").setup()
+  --       require("copilot_cmp").setup()
+  --     end, 100)
+  --   end,
+  -- },
   {
     "Pocco81/auto-save.nvim",
     require("auto-save").setup({
