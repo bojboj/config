@@ -10,15 +10,12 @@ lvim.colorscheme = "tokyonight"
 lvim.keys.normal_mode["*"] = "*``"
 lvim.keys.normal_mode["#"] = "#``"
 
-lvim.builtin.which_key.mappings["t"] = {
-  name = "Diagnostics",
-  t = { "<cmd>TroubleToggle<cr>", "trouble" },
-  w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "workspace" },
-  d = { "<cmd>TroubleToggle document_diagnostics<cr>", "document" },
-  q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
-  l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
-  r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
+lvim.builtin.which_key.mappings["a"] = {
+  name = "AI",
+  a = { ":CodyAsk ", "Ask AI", mode='v'},
+  t = { "<cmd>CodyToggle<cr>", "Toggle AI chat" },
 }
+
 lvim.builtin.nvimtree.setup.filters.custom = { '.DS_Store' }
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "intelephense", "cucumber_language_server" })
@@ -51,7 +48,12 @@ lvim.plugins = {
   --       require("copilot_cmp").setup()
   --     end, 100)
   --   end,
-  -- },
+  {
+    "sourcegraph/sg.nvim",
+    config = function()
+      require("sg").setup({})
+    end
+  },
   {
     "Pocco81/auto-save.nvim",
     require("auto-save").setup({
@@ -101,9 +103,5 @@ lvim.plugins = {
         post_hook = nil,
       })
     end
-  },
-  {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
   },
 }
