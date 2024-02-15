@@ -12,7 +12,6 @@ lvim.keys.normal_mode["#"] = "#``"
 
 lvim.builtin.which_key.mappings["a"] = {
   name = "AI",
-  a = { ":CodyAsk ", "Ask AI", mode='v'},
   t = { "<cmd>CodyToggle<cr>", "Toggle AI chat" },
 }
 
