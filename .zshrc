@@ -20,3 +20,4 @@ if [ -d "$HOME/Library/Python/3.10/bin" ]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
