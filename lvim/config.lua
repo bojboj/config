@@ -3,6 +3,9 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 --
+lvim.builtin.project.active = false
+lvim.builtin.terminal.active = false
+
 vim.opt.wrap = true
 lvim.transparent_window = true
 lvim.colorscheme = "tokyonight"
