@@ -1,8 +1,6 @@
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="mgutz"
-
-plugins=(vi-mode git fzf fd keychain)
+plugins=(keychain)
 
 zstyle ":omz:update" frequency 90
 
