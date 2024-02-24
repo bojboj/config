@@ -13,11 +13,6 @@ lvim.colorscheme = "tokyonight"
 lvim.keys.normal_mode["*"] = "*``"
 lvim.keys.normal_mode["#"] = "#``"
 
-lvim.builtin.which_key.mappings["a"] = {
-  name = "AI",
-  t = { "<cmd>CodyToggle<cr>", "Toggle AI chat" },
-}
-
 lvim.builtin.nvimtree.setup.filters.custom = { '.DS_Store' }
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "intelephense", "cucumber_language_server" })
@@ -40,22 +35,6 @@ dap.adapters.php = {
 }
 
 lvim.plugins = {
-  -- {
-  --   "zbirenbaum/copilot-cmp",
-  --   event = "InsertEnter",
-  --   dependencies = { "zbirenbaum/copilot.lua" },
-  --   config = function()
-  --     vim.defer_fn(function()
-  --       require("copilot").setup()
-  --       require("copilot_cmp").setup()
-  --     end, 100)
-  --   end,
-  {
-    "sourcegraph/sg.nvim",
-    config = function()
-      require("sg").setup({})
-    end
-  },
   {
     "Pocco81/auto-save.nvim",
     require("auto-save").setup({
