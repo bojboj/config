@@ -1,1 +1,4 @@
 set relativenumber
+set hlsearch
+set clipboard=unnamedplus
+nnoremap <CR> :noh<CR><CR>
