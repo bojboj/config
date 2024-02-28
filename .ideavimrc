@@ -1,4 +1,6 @@
 set relativenumber
+set number
 set hlsearch
 set clipboard=unnamedplus
 nnoremap <CR> :noh<CR><CR>
+set ideajoin
