@@ -1,13 +1,15 @@
 export ZSH=$HOME/.oh-my-zsh
 
-plugins=(keychain)
+ZSH_THEME="mgutz"
 
-zstyle ":omz:update" frequency 90
+plugins=(vi-mode git fzf fd keychain)
+
+zstyle ":omz:update" frequency 60
 
 zstyle :omz:plugins:keychain agents ssh
 zstyle :omz:plugins:keychain options --quiet
 
-export EDITOR="nvim"
+export EDITOR="lvim"
 
 if [ -d "$HOME/.local/bin" ]; then
    export PATH="$HOME/.local/bin:$PATH"
