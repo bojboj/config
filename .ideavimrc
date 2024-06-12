@@ -1,6 +1,35 @@
+""" Common settings -------------------------
 set relativenumber
 set number
-set hlsearch
 set clipboard=unnamedplus
-nnoremap <CR> :noh<CR><CR>
+set hlsearch
+
+""" Idea specific settings ------------------
 set ideajoin
+
+""" Mappings --------------------------------
+map <CR> :noh<CR><CR>
+map <A-2> <C-2>
+map <A-6> <C-6>
+map <A-A> <C-A>
+map <A-B> <C-B>
+map <A-C> <C-C>
+map <A-D> <C-D>
+map <A-E> <C-E>
+map <A-F> <C-F>
+map <A-G> <C-G>
+map <A-I> <C-I>
+map <A-J> <C-J>
+map <A-K> <C-K>
+map <A-L> <C-L>
+map <A-M> <C-M>
+map <A-N> <C-N>
+map <A-P> <C-P>
+map <A-R> <C-R>
+map <A-S> <C-S>
+map <A-T> <C-T>
+map <A-U> <C-U>
+map <A-V> <C-V>
+map <A-W> <C-W>
+map <A-X> <C-X>
+map <A-Y> <C-Y>
