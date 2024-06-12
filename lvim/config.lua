@@ -1,13 +1,5 @@
--- Read the docs: https://www.lunarvim.org/docs/configuration
--- Video Tutorials: https://www.youtube.com/watch?v=sFA9kX-Ud_c&list=PLhoH5vyxr6QqGu0i7tt_XoVK9v-KvZ3m6
--- Forum: https://www.reddit.com/r/lunarvim/
--- Discord: https://discord.com/invite/Xb9B4Ny
---
-lvim.builtin.project.active = false
-lvim.builtin.terminal.active = false
-
 vim.opt.wrap = true
-lvim.transparent_window = true
+
 lvim.colorscheme = "tokyonight"
 
 lvim.keys.normal_mode["*"] = "*``"
@@ -15,31 +7,14 @@ lvim.keys.normal_mode["#"] = "#``"
 
 lvim.builtin.nvimtree.setup.filters.custom = { '.DS_Store' }
 
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "intelephense", "cucumber_language_server" })
-lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
-  return server ~= "phpactor"
-end, lvim.lsp.automatic_configuration.skipped_servers)
-
-local formatters = require "lvim.lsp.null-ls.formatters"
-formatters.setup {
-  { command = "phpcsfixer", filetypes = { "php" } },
-  { command = "yamlfmt",    filetypes = { "yaml" } },
-}
-
-require("dap.ext.vscode").load_launchjs()
-local dap = require("dap")
-dap.adapters.php = {
-  type = "executable",
-  command = "php-debug-adapter",
-  args = {}
-}
-
 lvim.plugins = {
   {
     "Pocco81/auto-save.nvim",
-    require("auto-save").setup({
-      enabled = false,
-    })
+    config = function ()
+      require("auto-save").setup({
+        enabled = false,
+      })
+    end
   },
   {
     "kevinhwang91/nvim-bqf",
