@@ -1,6 +1,6 @@
 vim.opt.wrap = true
 
-lvim.colorscheme = "retro-box"
+lvim.colorscheme = "tokyonight-storm"
 
 lvim.keys.normal_mode["*"] = "*``"
 lvim.keys.normal_mode["#"] = "#``"

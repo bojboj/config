@@ -1,6 +1,6 @@
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="mgutz"
+ZSH_THEME="robbyrussell"
 
 plugins=(vi-mode git fzf fd keychain)
 
