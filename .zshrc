@@ -10,7 +10,7 @@ zstyle :omz:plugins:keychain agents ssh
 zstyle :omz:plugins:keychain options --quiet
 
 export EDITOR="lvim"
-export LESS="-SRXF"
+export LESS="-SRX"
 
 if [ -d "$HOME/.local/bin" ]; then
     export PATH="$HOME/.local/bin:$PATH"
