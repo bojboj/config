@@ -1,10 +1,7 @@
 vim.opt.wrap = true
+vim.opt.relativenumber = true
 
 lvim.colorscheme = "tokyonight-storm"
-
-lvim.keys.normal_mode["*"] = "*``"
-lvim.keys.normal_mode["#"] = "#``"
-
 lvim.builtin.nvimtree.setup.filters.custom = { '.DS_Store' }
 
 lvim.plugins = {
