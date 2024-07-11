@@ -1,10 +1,13 @@
 vim.opt.wrap = true
 vim.opt.relativenumber = true
 
-lvim.colorscheme = "tokyonight-storm"
-lvim.builtin.nvimtree.setup.filters.custom = { '.DS_Store' }
+lvim.colorscheme = "dracula"
+lvim.builtin.nvimtree.setup.filters.custom = { ".DS_Store" }
 
 lvim.plugins = {
+  {
+    "dracula/vim"
+  },
   {
     "Pocco81/auto-save.nvim",
     config = function ()
