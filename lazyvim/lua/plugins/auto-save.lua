@@ -5,7 +5,6 @@ return {
     event = { "InsertLeave", "TextChanged" },
     opts = {
       enabled = false,
-      enabled = false,
       execution_message = {},
     },
   },
