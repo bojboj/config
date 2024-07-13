@@ -9,7 +9,7 @@ zstyle ":omz:update" frequency 60
 zstyle :omz:plugins:keychain agents ssh
 zstyle :omz:plugins:keychain options --quiet
 
-export EDITOR="lvim"
+export EDITOR="nvim"
 export LESS="-SRX"
 
 if [ -d "$HOME/.local/bin" ]; then
