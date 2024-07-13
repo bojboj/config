@@ -4,7 +4,7 @@ ZSH_THEME="robbyrussell"
 
 plugins=(vi-mode git fzf fd keychain)
 
-zstyle ":omz:update" frequency 60
+zstyle ":omz:update" frequency 30
 
 zstyle :omz:plugins:keychain agents ssh
 zstyle :omz:plugins:keychain options --quiet
