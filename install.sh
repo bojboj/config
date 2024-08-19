@@ -2,7 +2,7 @@
 
 DOTFILES=$(pwd)
 
-cd rm "$HOME/.zshrc"
+rm "$HOME/.zshrc"
 ln -s "$DOTFILES/zshrc" "$HOME/.zshrc"
 
 rm "$HOME/.editorconfig"
