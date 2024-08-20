@@ -21,8 +21,3 @@ if [ -d "$HOME/.config/nvim" ]; then
     rm "$HOME/.config/nvim"
 fi
 ln -s "$DOTFILES/nvim" "$HOME/.config/nvim"
-
-if [ -d "$HOME/.config/helix" ]; then
-    rm "$HOME/.config/helix"
-fi
-ln -s "$DOTFILES/helix" "$HOME/.config/helix"
