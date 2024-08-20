@@ -3,6 +3,7 @@ return {
   varsion = "*",
   event = "VeryLazy",
   opts = {
+    preset = "helix",
     delay = 800,
     spec = {
       {"<leader>\\", "<cmd>noh<cr>", desc = "Clear Search Highlight", mode = "n"},
