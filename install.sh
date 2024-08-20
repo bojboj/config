@@ -2,17 +2,27 @@
 
 DOTFILES=$(pwd)
 
-rm "$HOME/.zshrc"
+if [ -f "$HOME/.zshrc" ]; then
+    rm "$HOME/.zshrc"
+fi
 ln -s "$DOTFILES/zshrc" "$HOME/.zshrc"
 
-rm "$HOME/.editorconfig"
+if [ -f "$HOME/.editorconfig" ]; then
+    rm "$HOME/.editorconfig"
+fi
 ln -s "$DOTFILES/editorconfig" "$HOME/.editorconfig"
 
-rm "$HOME/.tmux.conf"
+if [ -f "$HOME/.tmux.conf" ]; then
+    rm "$HOME/.tmux.conf"
+fi
 ln -s "$DOTFILES/tmux.conf" "$HOME/.tmux.conf"
 
-rm "$HOME/.config/nvim"
+if [ -d "$HOME/.config/nvim" ]; then
+    rm "$HOME/.config/nvim"
+fi
 ln -s "$DOTFILES/nvim" "$HOME/.config/nvim"
 
-rm "$HOME/.config/helix"
+if [ -d "$HOME/.config/helix" ]; then
+    rm "$HOME/.config/helix"
+fi
 ln -s "$DOTFILES/helix" "$HOME/.config/helix"
