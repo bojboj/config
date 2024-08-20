@@ -12,6 +12,7 @@ return {
       { "<leader>f",  "<cmd>Telescope find_files<cr>",      desc = "Find file",              mode = "n" },
       { "<leader>g",  "<cmd>Neotree git_status reveal<cr>", desc = "Git status explorer",    mode = "n" },
       { "<leader>h",  "<cmd>Gitsigns preview_hunk<cr>",     desc = "Preview git hunk",       mode = "n" },
+      { "<leader>m",  "<cmd>FormatToggle<cr>",              desc = "Toggle autoformatting",  mode = "n" },
       { "<leader>s",  "<cmd>Telescope live_grep<cr>",       desc = "Search text",            mode = "n" },
     }
   },
