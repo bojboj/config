@@ -11,5 +11,8 @@ ln -s "$DOTFILES/editorconfig" "$HOME/.editorconfig"
 rm "$HOME/.tmux.conf"
 ln -s "$DOTFILES/tmux.conf" "$HOME/.tmux.conf"
 
+rm "$HOME/.config/nvim"
+ln -s "$DOTFILES/nvim" "$HOME/.config/nvim"
+
 rm "$HOME/.config/helix"
 ln -s "$DOTFILES/helix" "$HOME/.config/helix"
