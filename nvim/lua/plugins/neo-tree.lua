@@ -7,6 +7,12 @@ return {
     { "MunifTanjim/nui.nvim",        version = "*" },
   },
   opts = {
+    sources = {
+      "filesystem",
+      "buffers",
+      "git_status",
+      "document_symbols",
+    },
     filesystem = {
       filtered_items = {
         hide_dotfiles = false,
