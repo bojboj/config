@@ -1,7 +1,17 @@
 return {
-  "williamboman/mason.nvim",
-  version = "*",
-  config = function()
-    require("mason").setup()
-  end,
+  {
+    "williamboman/mason.nvim",
+    version = "*",
+    opts = {}
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    version = "*",
+    opts = {
+      ensure_installed = {
+        "lua_ls",
+        "phpactor",
+      }
+    }
+  }
 }
