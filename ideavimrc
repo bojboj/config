@@ -1,0 +1,7 @@
+""" Common settings -------------------------
+set relativenumber
+set number
+set hlsearch
+
+""" Idea specific settings ------------------
+set ideajoin

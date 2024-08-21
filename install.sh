@@ -17,6 +17,11 @@ if [ -f "$HOME/.tmux.conf" ]; then
 fi
 ln -s "$DOTFILES/tmux.conf" "$HOME/.tmux.conf"
 
+if [ -f "$HOME/.ideavimrc" ]; then
+    rm "$HOME/.ideavimrc"
+fi
+ln -s "$DOTFILES/ideavimrc" "$HOME/.ideavimrc"
+
 if [ -d "$HOME/.config/nvim" ]; then
     rm "$HOME/.config/nvim"
 fi
