@@ -1,7 +1,8 @@
 return {
-  "Mofiqul/dracula.nvim",
+  "ellisonleao/gruvbox.nvim",
   version = "*",
   init = function()
-    vim.cmd [[colorscheme dracula]]
+    vim.opt.background = dark
+    vim.cmd [[colorscheme gruvbox]]
   end
 }

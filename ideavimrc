@@ -2,6 +2,7 @@
 set relativenumber
 set number
 set hlsearch
+set clipboard=unnamedplus
 
 """ Idea specific settings ------------------
 set ideajoin

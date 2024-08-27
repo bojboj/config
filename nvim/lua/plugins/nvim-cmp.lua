@@ -2,11 +2,9 @@ return {
   "hrsh7th/nvim-cmp",
   version = "*",
   dependencies = {
-    { "hrsh7th/nvim-lspconfig", version = "*" },
-    { "hrsh7th/cmp-nvim-lsp",   version = "*" },
-    { "hrsh7th/cmp-buffer",     version = "*" },
-    { "hrsh7th/cmp-path",       version = "*" },
-    { "hrsh7th/cmp-cmdline",    version = "*" },
+    { "hrsh7th/cmp-buffer",  version = "*" },
+    { "hrsh7th/cmp-path",    version = "*" },
+    { "hrsh7th/cmp-cmdline", version = "*" },
   },
   config = function()
     local cmp = require "cmp"
@@ -20,7 +18,6 @@ return {
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
       }),
       sources = cmp.config.sources({
-        { name = "nvim_lsp" },
         { name = "buffer" },
       })
     })
