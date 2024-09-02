@@ -7,7 +7,11 @@ if [ ! -d ~/.oh-my-zsh ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
-sudo chsh -s $(which zsh) $USER
+# Install fzf.
+if [ ! -d ~/.fzf ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install --all
+fi
 
 ln -fs $DOTFILES/zshrc $HOME/.zshrc
 ln -fs $DOTFILES/editorconfig $HOME/.editorconfig
@@ -15,3 +19,5 @@ ln -fs $DOTFILES/tmux.conf $HOME/.tmux.conf
 ln -fs $DOTFILES/ideavimrc $HOME/.ideavimrc
 ln -fs $DOTFILES/vscode/settings.json $HOME/.local/share/code-server/Machine/settings.json
 ln -fs $DOTFILES/nvim $HOME/.config/
+
+sudo chsh -s $(which zsh) $USER
