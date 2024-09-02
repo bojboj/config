@@ -2,6 +2,7 @@
     "workbench.colorTheme": "Gruvbox Dark Medium",
 
     "terminal.integrated.fontSize": 14, 
+    "terminal.integrated.defaultProfile.windows": "zsh",
 
     "editor.fontSize": 14,
     "editor.minimap.enabled": false,
