@@ -7,6 +7,8 @@ if [ ! -d ~/.oh-my-zsh ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
+sudo chsh -s $(which zsh) $USER
+
 ln -fs $DOTFILES/zshrc $HOME/.zshrc
 ln -fs $DOTFILES/editorconfig $HOME/.editorconfig
 ln -fs $DOTFILES/tmux.conf $HOME/.tmux.conf
