@@ -14,4 +14,4 @@ ln -fs $DOTFILES/editorconfig $HOME/.editorconfig
 ln -fs $DOTFILES/tmux.conf $HOME/.tmux.conf
 ln -fs $DOTFILES/ideavimrc $HOME/.ideavimrc
 ln -fs $DOTFILES/vscode/settings.json $HOME/.local/share/code-server/Machine/settings.json
-ln -fs $DOTFILES/nvim $HOME/.config/nvim
+ln -fs $DOTFILES/nvim $HOME/.config/
