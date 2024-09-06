@@ -17,3 +17,5 @@ if [ -d "$HOME/.local/bin" ]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
